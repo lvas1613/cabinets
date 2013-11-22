@@ -158,8 +158,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="php-interpreter" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="359" />
-    <option name="y" value="106" />
+    <option name="x" value="110" />
+    <option name="y" value="77" />
     <option name="width" value="981" />
     <option name="height" value="662" />
   </component>
@@ -243,12 +243,16 @@
       <created>1385079556025</created>
       <updated>1385079556025</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2 commit&#10;Changes to ImageController&#10;Uploading image and passing values to database">
+      <created>1385079601015</created>
+      <updated>1385079601015</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="359" y="106" width="981" height="662" extended-state="0" />
-    <editor active="false" />
+    <frame x="110" y="77" width="981" height="662" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6574803" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
