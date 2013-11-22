@@ -4,7 +4,7 @@
 @section('body')
 <div id="content-form" class="content-form-layout">
 
-{{ Form::open(array('action' => 'ContentController@store')) }}
+{{ Form::open(array('action'=>'ContentController@store')) }}
 
 <div class="paragraph-label">
 {{ Form::label('paragraph', 'Paragraph') }}

@@ -12,8 +12,8 @@
 */
 
 
-Route::get('/create', 'ContentController@create');
-Route::post('/post', 'ContentController@store');
+Route::get('content/create', 'ContentController@create');
+Route::post('content/post', 'ContentController@store');
 
 Route::get('/show/{name}', 'ContentController@show');
 
@@ -50,9 +50,12 @@ Route::get('/login', function()
 
 Route::post('/login', function()
 {
-    // Validation? Not in my quickstart!
-    // No, but really, I'm a bad person for leaving that out
+
     Auth::attempt( array('email' => Input::get('email'), 'password' => Input::get('password')) );
 
     return Redirect::to('/');
 });
+
+
+Route::get('/images/create', 'ImageController@create');
+Route::post('/post', 'ImageController@store');

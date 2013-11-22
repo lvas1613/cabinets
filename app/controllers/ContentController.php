@@ -1,6 +1,6 @@
 <?php
 
-class ContentController extends BaseController {
+class ContentController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -29,26 +29,18 @@ class ContentController extends BaseController {
 	 */
 	public function store()
 	{
-
-
-
-
+        //
         $content = new Content;
 
         $content->paragraph = Input::get('paragraph');
         $content->cat_name = Input::get('cat_name');
         $content->save();
 
-
-
-
-
 	}
-
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int  $name
 	 * @return Response
 	 */
 	public function show($name)

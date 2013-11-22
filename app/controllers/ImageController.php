@@ -20,6 +20,7 @@ class ImageController extends \BaseController {
 	public function create()
 	{
 		//
+        return View::make('images.form');
 	}
 
 	/**
@@ -29,7 +30,22 @@ class ImageController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+
+        $name = Input::file('image')->getClientOriginalName();
+
+        $filename = Input::file('image')->move(base_path().'/public/assets/imgs/' , $name);
+
+        $image = new Image;
+        $image->filename = $name;
+        $image->name = Input::get('name');
+        $image->description = Input::get('description');
+        $image->caption = Input::get('caption');
+        $image->date_created = Input::get('date_created');
+        $image->cat_name = Input::get('cat_name');
+        $image->save();
+
+
+
 	}
 
 	/**
