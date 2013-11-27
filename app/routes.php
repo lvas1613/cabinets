@@ -35,7 +35,17 @@ Route::get('users', function(){
 );
 
 
+Route::get('/zulu', function() {
 
+
+    $image = Imagine::make('assets/imgs/new.jpg')->resize(300, 300, true)->save('assets/imgs/thumbs/new4.jpg');
+
+
+
+    return Response::make($image, 200, array('Content-type'=>'image/jpeg'));
+
+}
+);
 
 
 Route::get('/', array('before' => 'auth' ,function()
