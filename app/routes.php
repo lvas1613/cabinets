@@ -38,7 +38,13 @@ Route::get('users', function(){
 Route::get('/zulu', function() {
 
 
-    $image = Imagine::make('assets/imgs/new.jpg')->resize(300, 300, true)->save('assets/imgs/thumbs/new4.jpg');
+    $image = Imagine::make('assets/imgs/abc.jpg')
+        ->resize(800, 600, true)->save('assets/imgs/normal.jpg')
+        ->resize(300, 300, true)->save('assets/imgs/thumbs/new4.jpg');
+    
+
+
+							    
 
 
 
@@ -69,3 +75,34 @@ Route::post('/login', function()
 
 Route::get('/images/create', 'ImageController@create');
 Route::post('/post', 'ImageController@store');
+
+
+
+
+
+
+
+
+//Array tests
+
+
+Route::get('/d', function(){
+
+
+    $dimension = array('thumbs'=>array('width'=>300, 'height'=>300), 'normal'=>array('width'=>800, 'height'=>600));
+
+    var_dump($dimension);
+
+    echo '<hr />';
+
+    foreach ($dimension as $d):
+	echo $d['width'].', '. $d['height'].'<br />';
+    endforeach;
+
+});
+
+
+Route::get('/content', function(){
+
+    return View::make('contact');
+});
