@@ -2,21 +2,23 @@
 
 
 @section('body')
-<form role="form">
+
+<div class="content">
+
 
 
 
 {{ Form::open(array('action'=>'ContentController@store')) }}
 
-    <div class="form-group">
-{{ Form::label('paragraph', 'Paragraph') }}
+<div class="form-group">
+{{ Form::label('paragraph', 'Enter a Paragraph') }}
 </div>
 
-    <div class="form-group">
-{{ Form::textarea('paragraph', 'Enter Paragraph', array('class'=>'form-control','rows'=>'3', 'cols'=>'14')) }}
+<div class="form-group">
+{{ Form::textarea('paragraph', null, array('class'=>'form-control','rows'=>'3', 'cols'=>'14')) }}
 </div>
 
-    <div class="form-group">
+<div class="form-group">
 {{ Form::select('cat_name', array('about'=> 'About',
                                   'furniture'=>'Furniture',
                                   'cabinetry'=> 'Cabinetry',
@@ -24,14 +26,16 @@
                                   'special-projects' => 'Special Projects',
                                   'contact' => 'Contact')) }}
 
-    </div>
+</div>
 
-    <div class="form-group">
+<div class="form-group">
 {{ Form::submit('Submit Content', array(
         'class'=>'btn btn-default')) }}
-
+ </div>
 {{ Form::close() }}
 
+
+
+
 </div>
-    </form>
 @stop

@@ -15,8 +15,6 @@
 Route::get('content/create', 'ContentController@create');
 Route::post('content/post', 'ContentController@store');
 
-Route::get('/show/{name}', 'ContentController@show');
-
 
 
 Route::get('/p', function(){
@@ -26,6 +24,10 @@ Route::get('/p', function(){
 
 
 });
+
+
+
+Route::get('/{name}', 'ContentController@show');
 
 Route::get('users', function(){
     $users = User::all();
@@ -102,7 +104,29 @@ Route::get('/d', function(){
 });
 
 
-Route::get('/content', function(){
+//Home Page route static pages
 
+Route::get('/home', 'HomeController@index');
+
+Route::get('/contact', function(){
     return View::make('contact');
+});
+
+
+
+
+
+
+
+
+
+
+//test
+
+Route::post('/ye', function(){
+    $content = new Content;
+
+    $content->paragraph = 'fool';
+    $content->cat_name = 'cabinetry';
+    $content->save();
 });

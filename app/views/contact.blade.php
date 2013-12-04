@@ -3,11 +3,11 @@
 
 @section('body')
 
-<address>
-    <strong>Twitter, Inc.</strong><br>
-    795 Folsom Ave, Suite 600<br>
-    San Francisco, CA 94107<br>
-    <abbr title="Phone">P:</abbr> (123) 456-7890
+<address class="address">
+    <strong>CURTIS VARNER FURNITURE &amp; CABINETRY</strong><br>
+    P.O. Box 279<br>
+    Topanga, California 90290<br>
+    Phone/Fax: 310/455-1310
 </address>
 
 

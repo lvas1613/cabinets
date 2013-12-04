@@ -29,7 +29,7 @@ class ContentController extends \BaseController {
 	 */
 	public function store()
 	{
-        //
+
         $content = new Content;
 
         $content->paragraph = Input::get('paragraph');
@@ -45,10 +45,10 @@ class ContentController extends \BaseController {
 	 */
 	public function show($name)
 	{
-	
+
 	    $a = Content::where('cat_name', '=', $name)->get();
 	    $data['p'] = $a;
-	    return View::make('about', $data); 
+	    return View::make('content', $data);
 	}
 
 	/**

@@ -1,12 +1,13 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbarstyle" role="navigation">
 
 <ul class="list-inline">
-    <li>Home</li>
-    <li>About</li>
-    <li>Furniture</li>
-    <li>Cabinetry</li>
-    <li>Kitchen &amp; Bath</li>
-    <li>Contact</li>
+    <li class="fontchange">Home</li>
+    <li class="fontchange">About Curtis</li>
+    <li class="fontchange">Furniture</li>
+    <li class="fontchange">Cabinetry</li>
+    <li class="fontchange">Kitchen &amp; Bath</li>
+    <li class="fontchange">Special Projects</li>
+    <li class="fontchange">Contact</li>
 </ul>
 
 </nav>
