@@ -40,5 +40,14 @@
         {{ HTML::image('assets/imgs/f_vanity_bathroom.jpg', 'kitchen')}}
     </div>
 
+
+
+
 </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+    $(document).ready(function(){
+        alert("prueba");
+    });
+</script>
 @stop

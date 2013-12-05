@@ -27,7 +27,7 @@ Route::get('/p', function(){
 
 
 
-Route::get('/{name}', 'ContentController@show');
+Route::get('content/{name}', 'ContentController@show');
 
 Route::get('users', function(){
     $users = User::all();
@@ -43,36 +43,17 @@ Route::get('/zulu', function() {
     $image = Imagine::make('assets/imgs/abc.jpg')
         ->resize(800, 600, true)->save('assets/imgs/normal.jpg')
         ->resize(300, 300, true)->save('assets/imgs/thumbs/new4.jpg');
-    
-
-
-							    
-
-
 
     return Response::make($image, 200, array('Content-type'=>'image/jpeg'));
 
 }
 );
 
+//Filters
 
-Route::get('/', array('before' => 'auth' ,function()
-{
-    return 'Hello, '.Auth::user()->email.'!';
-}));
 
-Route::get('/login', function()
-{
-    return View::make('login');
-});
 
-Route::post('/login', function()
-{
-
-    Auth::attempt( array('email' => Input::get('email'), 'password' => Input::get('password')) );
-
-    return Redirect::to('/');
-});
+Route::controller('users', 'UserController');
 
 
 Route::get('/images/create', 'ImageController@create');
@@ -115,18 +96,3 @@ Route::get('/contact', function(){
 
 
 
-
-
-
-
-
-
-//test
-
-Route::post('/ye', function(){
-    $content = new Content;
-
-    $content->paragraph = 'fool';
-    $content->cat_name = 'cabinetry';
-    $content->save();
-});

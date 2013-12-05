@@ -35,6 +35,8 @@ class ImageController extends \BaseController {
 
         $filename = Input::file('image')->move(base_path().'/public/assets/imgs/' , $name);
 
+
+
         $image = new Image;
         $image->filename = $name;
         $image->name = Input::get('name');
