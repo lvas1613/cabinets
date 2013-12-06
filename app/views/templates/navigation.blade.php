@@ -1,6 +1,15 @@
 <nav class="navbarstyle" role="navigation">
 
 <ul class="list-inline">
+
+
+        @foreach($p->cat_name as $b)
+        <li class="fontchange">$b</li>
+        @endforeach
+
+
+
+
     <li class="fontchange">Home</li>
     <li class="fontchange">About Curtis</li>
     <li class="fontchange">Furniture</li>

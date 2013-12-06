@@ -36,6 +36,10 @@ class ContentController extends \BaseController {
         $content->cat_name = Input::get('cat_name');
         $content->save();
 
+
+        return Redirect::to('content/about')->with('message', 'Upload Success');
+
+
 	}
 	/**
 	 * Display the specified resource.
