@@ -1,9 +1,6 @@
-@extends('templates.master')
-
+@extends ('templates.master')
 
 @section('body')
-
-
 
 <form class="form-inline" method="post" action="login">
         <h2 class="">Please sign in</h2>

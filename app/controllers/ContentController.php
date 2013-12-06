@@ -52,6 +52,7 @@ class ContentController extends \BaseController {
 
 	    $a = Content::where('cat_name', '=', $name)->get();
 	    $data['p'] = $a;
+        $data['title'] = $name;
 	    return View::make('content', $data);
 	}
 

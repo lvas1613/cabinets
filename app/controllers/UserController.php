@@ -8,8 +8,8 @@
 class UserController extends BaseController {
 
 public function getLogin(){
-
-    return View::make('users.login');
+    $data['title']= 'Login';
+    return View::make('users.login', $data);
 }
 public function postSignin(){
 

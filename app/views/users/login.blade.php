@@ -1,3 +1,7 @@
+@extends ('templates.master')
+
+@section('body')
+<div class="container">
 {{ Form::open(array('url'=>'users/signin', 'class'=>'form-signin')) }}
 <h2 class="form-signin-heading">Please Login</h2>
 <div>
@@ -10,8 +14,10 @@
 </div>
 
 <div>
-    {{ Form::submit('Login', array('class'=>'btn btn-large btn-primary btn-block'))}}
+    {{ Form::submit('Login', array('class'=>'btn default'))}}
 </div>
 
 
 {{ Form::close() }}
+</div>
+@stop

@@ -17,16 +17,6 @@ Route::post('content/post', 'ContentController@store');
 
 
 
-Route::get('/p', function(){
-
-    $a = Content::where('cat_name', '=', 'about')->find(3)->paragraph;
-    print $a;
-
-
-});
-
-
-
 Route::get('content/{name}', 'ContentController@show');
 
 Route::get('users', function(){
@@ -58,31 +48,6 @@ Route::controller('users', 'UserController');
 
 Route::get('/images/create', 'ImageController@create');
 Route::post('/post', 'ImageController@store');
-
-
-
-
-
-
-
-
-//Array tests
-
-
-Route::get('/d', function(){
-
-
-    $dimension = array('thumbs'=>array('width'=>300, 'height'=>300), 'normal'=>array('width'=>800, 'height'=>600));
-
-    var_dump($dimension);
-
-    echo '<hr />';
-
-    foreach ($dimension as $d):
-	echo $d['width'].', '. $d['height'].'<br />';
-    endforeach;
-
-});
 
 
 //Home Page route static pages

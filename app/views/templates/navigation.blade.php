@@ -3,10 +3,6 @@
 <ul class="list-inline">
 
 
-        @foreach($p->cat_name as $b)
-        <li class="fontchange">$b</li>
-        @endforeach
-
 
 
 
