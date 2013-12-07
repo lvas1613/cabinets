@@ -20,7 +20,8 @@ class ImageController extends \BaseController {
 	public function create()
 	{
 		//
-        return View::make('images.form');
+        $data['title']= 'Image Upload';
+        return View::make('images.form', $data);
 	}
 
 	/**
@@ -29,26 +30,27 @@ class ImageController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
+        {
 
-        $name = Input::file('image')->getClientOriginalName();
-
-        $filename = Input::file('image')->move(base_path().'/public/assets/imgs/' , $name);
-
-
-
-        $image = new Image;
-        $image->filename = $name;
-        $image->name = Input::get('name');
-        $image->description = Input::get('description');
-        $image->caption = Input::get('caption');
-        $image->date_created = Input::get('date_created');
-        $image->cat_name = Input::get('cat_name');
-        $image->save();
+            $name = Input::file('image')->getClientOriginalName();
+            $image = new Image;
+            $image->filename = 'l_'.$name;
+            $image->thumbs = 't_'.$name;
+            $image->name = Input::get('name');
+            $image->description = Input::get('description');
+            $image->caption = Input::get('caption');
+            $image->date_created = Input::get('date_created');
+            $image->cat_name = Input::get('cat_name');
+            $image->save();
 
 
+            Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
+            Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/thumbs/'.'t_'.$name);
 
-	}
+            return Redirect::to('/images/create')->with('message','Success');
+
+
+        }
 
 	/**
 	 * Display the specified resource.
@@ -56,9 +58,13 @@ class ImageController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($name)
 	{
-		//
+
+
+        $images = Image::where('cat_name', '=', $name)->get();
+        $data['image'] = $images;
+        return View::make('images/content', $data);
 	}
 
 	/**

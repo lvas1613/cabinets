@@ -1,9 +1,16 @@
 <section>
 
+
+
+
     <ul class="rslides" id="slide1">
-       <li>{{HTML::image('assets/imgs/f_dining_room_table.jpg') }}</li>
-        <li>{{HTML::image('assets/imgs/f_floating_desk.jpg') }}</li>
-        <li>{{HTML::image('assets/imgs/f_glass_coffee_table.jpg') }}</li>
+
+
+
+        @foreach($handle as $image)
+        <li>{{ HTML::image('assets/imgs/slideshow/'.$image) }}</li>
+        @endforeach
+
 
     </ul>
 </section>
