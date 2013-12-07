@@ -3,8 +3,8 @@
 @section('navigation')
 <div class="navbarstyle">
 <ul class="list-inline">
-@foreach($name as $cat)
-<li class="fontchange">{{ ucfirst($cat->name) }}</li>
+@foreach(Category::orderBy('id','ASC')->get() as $cat)
+<li><a class="fontchange" href="{{$cat->name}}"> {{ ucfirst($cat->name) }}</a></li>
 @endforeach
 </ul>
 </div>
@@ -23,6 +23,9 @@
    {{ HTML::script('assets/js/about.js') }}
 
 @endif
+
+
+
 </div><!--end of content div -->
 
 @section('categories')
@@ -47,6 +50,9 @@
 
 
 @stop
+
+
+
 
 <script>
     $("p").css({textAlign:"justify"});

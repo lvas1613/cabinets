@@ -1,6 +1,18 @@
 @extends('templates.master')
 
 
+@section('navigation')
+<div class="navbarstyle">
+    <ul class="list-inline">
+        @foreach(Category::orderBy('id','ASC')->get() as $cat)
+        <li><a class="fontchange" href="{{$cat->name}}"> {{ ucfirst($cat->name) }}</a></li>
+        @endforeach
+    </ul>
+</div>
+@stop
+
+
+
 @section('body')
 
 <address class="address">

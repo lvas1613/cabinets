@@ -20,8 +20,7 @@ class ImageController extends \BaseController {
 	public function create()
 	{
 		//
-        $navigation = Category::get();
-        $data['name'] = $navigation;
+
         $data['title']= 'Image Upload';
         return View::make('images.form', $data);
 	}
@@ -51,7 +50,7 @@ class ImageController extends \BaseController {
             Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
             Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/thumbs/'.'t_'.$name);
 
-            return Redirect::to('/images/create')->with('message','Success');
+            return Redirect::to('/images/create')->with('message','Your Upload was Successful');
 
 
         }

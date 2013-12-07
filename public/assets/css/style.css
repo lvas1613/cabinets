@@ -77,3 +77,13 @@ footer a{
     width: 700px;
     margin:0 auto;
 }
+
+.navigation-list {
+
+}
+
+.message-success {
+    text-align: center;
+    width: 100%;
+    clear:both;
+}

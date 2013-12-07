@@ -16,3 +16,6 @@ endforeach;
 
 </div>
 
+@if($title == 'contact')
+yield('contact')
+@endif

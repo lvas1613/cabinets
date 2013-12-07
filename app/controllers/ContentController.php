@@ -50,11 +50,7 @@ class ContentController extends \BaseController {
 	public function show($name)
 	{
 	
-	$navigation = Category::get();
-	$data['name'] = $navigation;
 
-	
-	
         $images = Image::where('cat_name', '=', $name)->get();
         $data['images'] = $images;
 
@@ -64,6 +60,10 @@ class ContentController extends \BaseController {
 	    $a = Content::where('cat_name', '=', $name)->get();
 	    $data['p'] = $a;
         $data['title'] = $name;
+
+        if($name == 'contact')
+            return View::make('contact', $data);
+
 	    return View::make('content', $data);
 	}
 
