@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fff8fcb1-9aeb-4a77-842d-95a56a3d8822" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ContentController.php" afterPath="$PROJECT_DIR$/app/controllers/ContentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ImageController.php" afterPath="$PROJECT_DIR$/app/controllers/ImageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contact.blade.php" afterPath="$PROJECT_DIR$/app/views/contact.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/content.blade.php" afterPath="$PROJECT_DIR$/app/views/content.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/images/content.blade.php" afterPath="$PROJECT_DIR$/app/views/images/content.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home.blade.php" afterPath="$PROJECT_DIR$/app/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/templates/master.blade.php" afterPath="$PROJECT_DIR$/app/views/templates/master.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/style.css" afterPath="$PROJECT_DIR$/public/assets/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cabinets.iws" />
@@ -552,7 +544,11 @@
       <created>1386450319166</created>
       <updated>1386450319167</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="7 Commit&#10;Links updated, We can move everything to one central controller. Not big though. All models working, Need to change the presentation model in order to be more efficient and avoid repetition or calling files that do the same thing in a different folder structure.">
+      <created>1386459325146</created>
+      <updated>1386459325146</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -613,7 +609,8 @@
     <MESSAGE value="4 commit &#10;Fix title in all pages. Taking the name of the page as the variable for the title.&#10;Need to clean the routes page. Should we move routes to controllers in order to have more room to manipulate data?" />
     <MESSAGE value="5 commit &#10;Finish working on image controller, thumbnails and large images" />
     <MESSAGE value="6 commit&#10;&#10;Fix the content for the images. Must reorganize structure. A lot of clean up. We can refactor and get rid of files not needed." />
-    <option name="LAST_COMMIT_MESSAGE" value="6 commit&#10;&#10;Fix the content for the images. Must reorganize structure. A lot of clean up. We can refactor and get rid of files not needed." />
+    <MESSAGE value="7 Commit&#10;Links updated, We can move everything to one central controller. Not big though. All models working, Need to change the presentation model in order to be more efficient and avoid repetition or calling files that do the same thing in a different folder structure." />
+    <option name="LAST_COMMIT_MESSAGE" value="7 Commit&#10;Links updated, We can move everything to one central controller. Not big though. All models working, Need to change the presentation model in order to be more efficient and avoid repetition or calling files that do the same thing in a different folder structure." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
