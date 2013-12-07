@@ -49,6 +49,12 @@ class ContentController extends \BaseController {
 	 */
 	public function show($name)
 	{
+	
+	$navigation = Category::get();
+	$data['name'] = $navigation;
+
+	
+	
         $images = Image::where('cat_name', '=', $name)->get();
         $data['images'] = $images;
 

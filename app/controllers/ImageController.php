@@ -20,6 +20,8 @@ class ImageController extends \BaseController {
 	public function create()
 	{
 		//
+        $navigation = Category::get();
+        $data['name'] = $navigation;
         $data['title']= 'Image Upload';
         return View::make('images.form', $data);
 	}
@@ -31,6 +33,8 @@ class ImageController extends \BaseController {
 	 */
 	public function store()
         {
+
+
 
             $name = Input::file('image')->getClientOriginalName();
             $image = new Image;

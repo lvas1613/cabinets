@@ -1,5 +1,16 @@
 @extends('templates.master')
 
+@section('navigation')
+<div class="navbarstyle">
+<ul class="list-inline">
+@foreach($name as $cat)
+<li class="fontchange">{{ ucfirst($cat->name) }}</li>
+@endforeach
+</ul>
+</div>
+@stop
+
+
 @section('body')
 
 <div class="content">

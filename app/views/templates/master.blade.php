@@ -10,11 +10,8 @@
     </div>
 
 
-    @include('templates.navigation')
-
+    @yield('navigation')
     @yield('body')
-
-
 
     @yield('categories')
 
