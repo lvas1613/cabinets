@@ -11,7 +11,12 @@
 
 
     @include('templates.navigation')
+
     @yield('body')
+
+
+
+    @yield('categories')
 
     <footer>
         @section('footer')

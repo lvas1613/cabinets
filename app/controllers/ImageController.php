@@ -63,7 +63,7 @@ class ImageController extends \BaseController {
 
 
         $images = Image::where('cat_name', '=', $name)->get();
-        $data['image'] = $images;
+        $data['images'] = $images;
         return View::make('images/content', $data);
 	}
 

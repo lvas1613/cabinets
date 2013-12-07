@@ -7,11 +7,20 @@
 
     {{ HTML::script('assets/js/jquery.js/') }}
     {{ HTML::script('assets/js/bootstrap.js') }}
+    {{ HTML::script('assets/js/slimbox2.js') }}
+    {{ HTML::script('assets/js/autoload.js') }}
+
+
+    {{ HTML::style('assets/css/slimbox2.css') }}
+
+
 
     @if(isset($a) && $a->cat_name == 'about')
 
     {{ HTML::style('assets/css/responsiveslides.css') }}
     {{ HTML::script('assets/js/responsiveslides.min.js') }}
+    {{ HTML::script('assets/js/about.js') }}
+
 
     @endif
 

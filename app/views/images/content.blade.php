@@ -1,13 +1,18 @@
 
-<ul>
-<?php
-foreach($image as $image):
-echo '<li>'.$image->filename .'</li>';
+<div id="categories">
 
-echo '<li><a href="images/image-1.jpg" rel="lightbox" title="'.$image->caption.'"><img src="http://cabinets.local/assets/imgs/thumbs/'.$image->thumbs.'" /></a></li>';
+    <div class="boxes_categories">
+<?php
+
+foreach($images as $image):
+
+    echo '<div class="boxes_categories"><a href="http://cabinets.local/assets/imgs/'.$image->filename.'" rel="lightbox-'.$image->cat_name.'" title="'.$image->caption.'"><img src="http://cabinets.local/assets/imgs/thumbs/'.$image->thumbs.'" /></a></div>';
 
 
 
 endforeach;
 ?>
-</ul>
+    </div>
+
+</div>
+

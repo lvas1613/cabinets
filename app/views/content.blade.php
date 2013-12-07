@@ -2,9 +2,6 @@
 
 @section('body')
 
-
-
-
 <div class="content">
 @foreach($p as $a)
 <p class="{{$a->cat_name.'-content'}}">{{$a->paragraph}}</p>
@@ -17,9 +14,32 @@
 @endif
 </div><!--end of content div -->
 
+@section('categories')
 
+
+<div id="categories">
+
+        <?php
+
+        foreach($images as $image):
+
+            echo '<div class="boxes_categories"><a href="http://cabinets.local/assets/imgs/'.$image->filename.'" rel="lightbox-'.$image->cat_name.'" title="'.$image->caption.'"><img src="http://cabinets.local/assets/imgs/thumbs/'.$image->thumbs.'" /></a></div>';
+
+
+
+        endforeach;
+        ?>
+
+
+</div>
+
+
+
+@stop
 
 <script>
     $("p").css({textAlign:"justify"});
 </script>
 @stop
+
+

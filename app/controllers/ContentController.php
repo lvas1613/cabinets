@@ -49,6 +49,11 @@ class ContentController extends \BaseController {
 	 */
 	public function show($name)
 	{
+        $images = Image::where('cat_name', '=', $name)->get();
+        $data['images'] = $images;
+
+
+
         $data['handle'] = array_diff(scandir('assets/imgs/slideshow', 1), array('..','.'));
 	    $a = Content::where('cat_name', '=', $name)->get();
 	    $data['p'] = $a;
