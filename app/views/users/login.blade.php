@@ -1,6 +1,12 @@
 @extends ('templates.master')
 
 @section('body')
+
+
+@if(Session::has('message'))
+<div class="message-success"<h1>{{Session::get('message') }}</h1></div>
+@endif
+
 <div class="container">
 {{ Form::open(array('url'=>'users/signin', 'class'=>'form-signin')) }}
 <h2 class="form-signin-heading">Please Login</h2>

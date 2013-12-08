@@ -7,6 +7,12 @@
  */
 class UserController extends BaseController {
 
+
+public function __construct(){
+
+    $this->beforeFilter('auth', array('only'=>array('content/create')));
+    $this->beforeFilter('auth', array('only'=>array('images/create')));
+}
 public function getLogin(){
     $data['title']= 'Login';
     return View::make('users.login', $data);

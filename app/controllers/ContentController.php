@@ -19,7 +19,8 @@ class ContentController extends \BaseController {
 	 */
 	public function create()
 	{
-        return View::make('content_form');
+        $data['title']= 'Content Create';
+        return View::make('content_form', $data);
 	}
 
 	/**
@@ -58,6 +59,11 @@ class ContentController extends \BaseController {
 
         $data['handle'] = array_diff(scandir('assets/imgs/slideshow', 1), array('..','.'));
 	    $a = Content::where('cat_name', '=', $name)->get();
+
+        if(!(Category::where('cat_name', '=', $name)))
+            return Response::make('Page not found', 404);
+
+
 	    $data['p'] = $a;
         $data['title'] = $name;
 

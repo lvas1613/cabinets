@@ -84,6 +84,10 @@ footer a{
 
 .message-success {
     text-align: center;
+    font-size: 14pt;
+    color: #ffffff;
     width: 100%;
+    background: #e4b9c0;
     clear:both;
+    margin:10px;
 }
