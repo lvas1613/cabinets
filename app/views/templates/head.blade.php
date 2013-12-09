@@ -1,5 +1,7 @@
 <head>
 
+
+
     <title>{{ucfirst($title)}} </title>
     <link href="http://cabinets.local/assets/imgs/favico.png" rel="icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

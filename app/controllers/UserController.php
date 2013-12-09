@@ -31,7 +31,7 @@ public function postSignin(){
 
     public function getLogout(){
         Auth::logout();
-        return Redirect::to('users/login')->with('message','You are now logged out');
+        return Redirect::intended('users/login')->with('message','You are now logged out');
     }
 
 }

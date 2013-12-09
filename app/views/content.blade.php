@@ -4,7 +4,7 @@
 <div class="navbarstyle">
 <ul class="list-inline">
 @foreach(Category::orderBy('id','ASC')->get() as $cat)
-<li><a class="fontchange" href="{{$cat->name}}"> {{ ucfirst($cat->name) }}</a></li>
+<li><a class="fontchange" href="http://cabinets.local/content/{{$cat->name}}"> {{ ucfirst($cat->name) }}</a></li>
 @endforeach
 
     @if(!Auth::check())
@@ -39,6 +39,9 @@
    {{ HTML::script('assets/js/about.js') }}
 
 @endif
+
+
+
 
 
 

@@ -18,6 +18,9 @@ class ContentController extends \BaseController {
 	public function index()
 	{
 		//
+
+        $data['title']= 'home';
+        return View::make('home', $data);
 	}
 
 	/**
@@ -59,42 +62,33 @@ class ContentController extends \BaseController {
 	public function show($name)
 	{
 	
-
+        //Getting images based on cat_name
         $images = Image::where('cat_name', '=', $name)->get();
         $data['images'] = $images;
-
+        //line just deletes the periods outputted by scandir on gnix systems
         $data['handle'] = array_diff(scandir('assets/imgs/slideshow', 1), array('..','.'));
 
-        $content = Content::where('cat_name', '=', $name);
+        //Getting content based on cat_name
+        $content = Content::where('cat_name', '=', $name)->get();
+
+        //testing whether the table exists if not throwing and exception
         try {
 
-	    $test = Content::where('cat_name', '=', $name)->firstOrFail();
+	    $model = Content::where('cat_name', '=', $name)->firstOrFail();
 
         }
         catch (ModelNotFoundException $e)
         {
-            return Redirect::to('users/login');
+            return \Illuminate\Support\Facades\Response::make('The model doesn\'t exists', 404);
         }
 
-
+        //Passing p (paragraph) and title to the views
         $data['p'] = $content;
         $data['title'] = $name;
 
 
-        if($name == 'contact')
-            return View::make('contact', $data);
 
 	    return View::make('content', $data);
-
-
-
-
-
-
-
-
-
-
 
 
 
