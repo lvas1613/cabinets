@@ -1,12 +1,20 @@
 <?php
 
+
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+
 class ContentController extends \BaseController {
+
+
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
+
+
 	public function index()
 	{
 		//
@@ -55,23 +63,42 @@ class ContentController extends \BaseController {
         $images = Image::where('cat_name', '=', $name)->get();
         $data['images'] = $images;
 
-
-
         $data['handle'] = array_diff(scandir('assets/imgs/slideshow', 1), array('..','.'));
-	    $a = Content::where('cat_name', '=', $name)->get();
 
-        if(!(Category::where('cat_name', '=', $name)))
-            return Response::make('Page not found', 404);
+        $content = Content::where('cat_name', '=', $name);
+        try {
+
+	    $test = Content::where('cat_name', '=', $name)->firstOrFail();
+
+        }
+        catch (ModelNotFoundException $e)
+        {
+            return Redirect::to('users/login');
+        }
 
 
-	    $data['p'] = $a;
+        $data['p'] = $content;
         $data['title'] = $name;
+
 
         if($name == 'contact')
             return View::make('contact', $data);
 
 	    return View::make('content', $data);
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 	/**
 	 * Show the form for editing the specified resource.

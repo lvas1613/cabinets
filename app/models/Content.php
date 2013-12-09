@@ -2,7 +2,9 @@
 
 /*Content model is the interface of a db table. */
 
-class Content extends Eloquent {
+
+    class Content extends Eloquent {
+
 
     public $timestamps = false;
 

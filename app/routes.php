@@ -12,6 +12,7 @@
 */
 
 
+
 Route::get('content/create', array('before'=>'auth', 'uses'=>'ContentController@create'));
 Route::post('content/post', 'ContentController@store');
 
@@ -52,3 +53,21 @@ Route::get('/contact', function(){
 
 
 
+Route::get('test/{name}', function($name){
+    
+    try {
+    $content = Category::where('name','=', $name)->firstOrFail();
+
+    }
+
+    catch (ModelNotFoundException $e)
+    {
+        return Redirect::to('users/login');
+    }
+
+    
+
+    	
+
+
+});
