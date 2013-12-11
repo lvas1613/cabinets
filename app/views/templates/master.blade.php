@@ -35,21 +35,11 @@ header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
         <small>{{ HTML::link('users/logout', 'Logout') }}</small>
         @endif
 
-        @show
+
         </p>
+        @show
     </footer>
 </div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-
-
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-
-
-
-
 
 
 </body>

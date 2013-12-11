@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -115,6 +115,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
         'Cartalyst\Sentry\SentryServiceProvider',
+        'Former\FormerServiceProvider',
 
 	),
 
@@ -182,6 +183,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Imagine'         => 'Intervention\Image\Facades\Image',
         'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+        'Former'          => 'Former\Facades\Former'
 
 	),
 

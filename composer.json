@@ -6,10 +6,10 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 		"intervention/image": "dev-master",
-		"cartalyst/sentry" : "2.0.*"
+		"cartalyst/sentry" : "2.0.*",
+		"anahkiasen/former" : "dev-master"
 	},
 
-	"minimum-stability":"stable",
 
 	
 

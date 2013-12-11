@@ -64,7 +64,7 @@
 
         endforeach;
         ?>
-
+        <?php echo $images->links(); ?>
 
 </div>
 
@@ -78,6 +78,8 @@
 <script>
     $("p").css({textAlign:"justify"});
 </script>
-@stop
 
+
+
+@stop
 

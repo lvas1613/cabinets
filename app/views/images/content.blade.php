@@ -15,7 +15,3 @@ endforeach;
     </div>
 
 </div>
-
-@if($title == 'contact')
-yield('contact')
-@endif

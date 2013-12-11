@@ -33,9 +33,25 @@ class ImageController extends \BaseController {
 	public function store()
         {
 
+            $data = Input::all();
+            $rules = array(
+                'file'=>'required',
+                'image'=> 'image',
+                'date_created'=>'date_format:y/m/d',
+                'caption'=>'required',
+                'cat_name'=>'required',
+                'description'=>'required',
+                'name'=>'required'
+            );
+
+            $validator = Validator::make($data, $rules);
+
+            if($validator->passes()){
 
 
             $name = Input::file('image')->getClientOriginalName();
+
+
             $image = new Image;
             $image->filename = 'l_'.$name;
             $image->thumbs = 't_'.$name;
@@ -44,6 +60,8 @@ class ImageController extends \BaseController {
             $image->caption = Input::get('caption');
             $image->date_created = Input::get('date_created');
             $image->cat_name = Input::get('cat_name');
+
+
             $image->save();
 
 
@@ -51,7 +69,12 @@ class ImageController extends \BaseController {
             Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/thumbs/'.'t_'.$name);
 
             return Redirect::to('/images/create')->with('message','Your Upload was Successful');
+            }
 
+            else
+
+
+            Redirect::action('Auth::logout()')->withErrors($validator);
 
         }
 

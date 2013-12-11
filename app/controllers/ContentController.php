@@ -63,9 +63,10 @@ class ContentController extends \BaseController {
 	{
 	
         //Getting images based on cat_name
-        $images = Image::where('cat_name', '=', $name)->get();
+
+        $images = Image::where('cat_name', '=', $name)->paginate(9);
         $data['images'] = $images;
-        //line just deletes the periods outputted by scandir on gnix systems
+        //line just deletes the periods outputted by scandir on nix systems
         $data['handle'] = array_diff(scandir('assets/imgs/slideshow', 1), array('..','.'));
 
         //Getting content based on cat_name

@@ -1,6 +1,5 @@
 @extends('templates.master')
 
-
 @section('navigation')
 <div class="navbarstyle">
     <ul class="list-inline">
@@ -23,9 +22,6 @@
 @section('body')
 
 <div class="content">
-
-
-
 
 {{ Form::open(array('action'=>'ContentController@store')) }}
 
@@ -52,9 +48,6 @@
         'class'=>'btn btn-default')) }}
  </div>
 {{ Form::close() }}
-
-
-
 
 </div>
 @stop
