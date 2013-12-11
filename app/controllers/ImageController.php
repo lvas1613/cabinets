@@ -35,9 +35,9 @@ class ImageController extends \BaseController {
 
             $data = Input::all();
             $rules = array(
-                'file'=>'required',
+
                 'image'=> 'image',
-                'date_created'=>'date_format:y/m/d',
+
                 'caption'=>'required',
                 'cat_name'=>'required',
                 'description'=>'required',
@@ -63,18 +63,15 @@ class ImageController extends \BaseController {
 
 
             $image->save();
-
-
-            Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
-            Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/thumbs/'.'t_'.$name);
-
             return Redirect::to('/images/create')->with('message','Your Upload was Successful');
             }
 
-            else
+            else{
+                return Redirect::to('/images/create')->withErrors($validator);
+        }
+            Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
+            Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/thumbs/'.'t_'.$name);
 
-
-            Redirect::action('Auth::logout()')->withErrors($validator);
 
         }
 
