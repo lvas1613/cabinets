@@ -37,7 +37,7 @@ class ImageController extends \BaseController {
             $rules = array(
 
                 'image'=> 'image',
-
+                'date_created'=> array('required','date_format:"Y-m-d"'),
                 'caption'=>'required',
                 'cat_name'=>'required',
                 'description'=>'required',
@@ -46,7 +46,8 @@ class ImageController extends \BaseController {
 
             $validator = Validator::make($data, $rules);
 
-            if($validator->passes()){
+            if($validator->passes())
+            {
 
 
             $name = Input::file('image')->getClientOriginalName();
@@ -63,14 +64,15 @@ class ImageController extends \BaseController {
 
 
             $image->save();
+                Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
+                Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/thumbs/'.'t_'.$name);
             return Redirect::to('/images/create')->with('message','Your Upload was Successful');
             }
 
             else{
                 return Redirect::to('/images/create')->withErrors($validator);
-        }
-            Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
-            Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/thumbs/'.'t_'.$name);
+                }
+
 
 
         }
